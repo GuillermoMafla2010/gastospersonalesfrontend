@@ -1,5 +1,7 @@
 {
   "name": "deudas",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
