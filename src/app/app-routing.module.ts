@@ -16,7 +16,13 @@ const routes: Routes = [
   { path: 'crear-gastos', loadChildren: './componentes/gastos/crear-gastos/crear-gastos.module#CrearGastosPageModule' },
   { path: 'ver-gastos', loadChildren: './componentes/gastos/ver-gastos/ver-gastos.module#VerGastosPageModule' },
   { path: 'ver-gastos-fecha', loadChildren: './componentes/gastos/ver-gastos-fecha/ver-gastos-fecha.module#VerGastosFechaPageModule' },
-  { path: 'editar-gastos', loadChildren: './componentes/gastos/editar-gastos/editar-gastos.module#EditarGastosPageModule' }
+  { path: 'editar-gastos', loadChildren: './componentes/gastos/editar-gastos/editar-gastos.module#EditarGastosPageModule' },
+  { path: 'ahorros', loadChildren: './componentes/ahorros/ahorros/ahorros.module#AhorrosPageModule' },
+  { path: 'ahorros-opciones', loadChildren: './componentes/ahorros/ahorros-opciones/ahorros-opciones.module#AhorrosOpcionesPageModule' },
+  { path: 'ahorros-veringresos', loadChildren: './componentes/ahorros/ahorros-veringresos/ahorros-veringresos.module#AhorrosVeringresosPageModule' },
+  { path: 'ahorros-vergastos', loadChildren: './componentes/ahorros/ahorros-vergastos/ahorros-vergastos.module#AhorrosVergastosPageModule' },
+  { path: 'ahorros-crear', loadChildren: './componentes/ahorros/ahorros-crear/ahorros-crear.module#AhorrosCrearPageModule' },
+  { path: 'ahorros-creargasto', loadChildren: './componentes/ahorros/ahorros-creargasto/ahorros-creargasto.module#AhorrosCreargastoPageModule' },
 ];
 @NgModule({
   imports: [
