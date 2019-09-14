@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>crear-gastos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-title padding>Detalles</ion-card-title>
+        <ion-card-content>
+          <form (ngSubmit)="guardar()">
+            <ion-item>
+                <ion-label position="floating">Nombre Gasto</ion-label>
+                <ion-input type="text" name="nombre_gasto" [(ngModel)]="gasto.nombre_gasto" ></ion-input>
+              </ion-item>
+    
+              <ion-item>
+                  <ion-label position="floating">Monto</ion-label>
+                  <ion-input type="number" name="cantidad_gasto" [(ngModel)]="gasto.cantidad_gasto" ></ion-input>
+                </ion-item>
+    
+                <ion-item>
+                    <ion-label position="floating">Categoria</ion-label>
+                    <ion-select [(ngModel)]="gasto.categoria_id" name="categoria">
+                      <ion-select-option  *ngFor="let item of categorias" value={{item.id}}>{{item.nombre_categoria}}</ion-select-option>
+                      
+                    </ion-select>
+                  </ion-item>
+  
+                  <ion-item class="espaciado">
+                      <ion-label position="floating">Fecha</ion-label>
+                      <ion-datetime [(ngModel)]="gasto.fecha" name="fecha" ></ion-datetime>
+                  </ion-item>
+                    
+  
+    
+                  
+                      <ion-button type="submit" class="margen">
+                          Guardar
+                        </ion-button>
+    
+                  
+                  
+                
+                
+    
+    
+    
+            </form>
+    
+        </ion-card-content>
+      </ion-card>
+  
+
+</ion-content>

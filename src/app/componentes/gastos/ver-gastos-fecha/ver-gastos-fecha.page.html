@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>ver-gastos-fecha</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <form (ngSubmit)="guardar()">
+  
+        <div class="espaciado">
+            <ion-row>
+              <ion-col size="12">
+                
+          
+                <ion-item>
+                  <ion-label position="floating">Fecha Inicio</ion-label>
+                  <ion-datetime name="fecha_inicio" [(ngModel)]="consulta.fecha_inicio"></ion-datetime>
+                </ion-item>
+              </ion-col>
+          
+              <ion-col size="12">
+                <ion-item>
+                  <ion-label position="floating">Fecha Fin</ion-label>
+                  <ion-datetime name="fecha_fin" [(ngModel)]="consulta.fecha_fin"></ion-datetime>
+                </ion-item>
+              </ion-col>
+          
+          
+              
+              <ion-col size="12">
+                  <ion-item>
+                    
+                    <ion-select [(ngModel)]="consulta.categoria" name="categoria" >
+                        <ion-select-option value="0" slot = "end">Todos</ion-select-option>
+                        <ion-select-option *ngFor="let item of categoria"  value={{item.id}}> {{item.nombre_categoria}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+  
+                
+                
+                <ion-button type="submit" expand="full">Consultar</ion-button>
+            </ion-row>
+  
+  
+            
+          </div>
+    </form>
+  
+  <div *ngIf="resultado" class="listaingreso">
+    <div class="titulo" *ngIf="resultado?.length!==0">
+        <ion-label > Detalles de la Consulta </ion-label>
+    </div>
+    
+    <ion-list *ngFor="let item of resultado">
+      <ion-item class="texto">
+        {{item.nombre_gasto}}
+        <ion-badge slot="end" color="light" class="texto">{{item.cantidad_gasto}}</ion-badge>
+      </ion-item>
+  
+      
+    </ion-list>
+  
+    <ion-item *ngIf="resultado?.length!==0">
+      <ion-label slot="start" class="texto"> Total Ingreso  </ion-label>
+        <ion-badge slot="end" color="success" class="texto">{{suma}}</ion-badge>
+    </ion-item>
+  </div>
+    
+  </ion-content>
+  

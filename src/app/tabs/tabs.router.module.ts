@@ -30,6 +30,17 @@ const routes: Routes = [
       },
 
       {
+        path: 'gastos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/gastos.module').then(m => m.GastosPageModule)
+          }
+        ]
+      },
+
+      {
         path: 'crear-ingresos',
         children: [
           {
@@ -68,6 +79,46 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../componentes/ingresos/ver-ingresos-fecha/ver-ingresos-fecha.module').then(m => m.VerIngresosFechaPageModule)
+          }
+        ]
+      },
+      {
+        path: 'crear-gastos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/crear-gastos/crear-gastos.module').then(m => m.CrearGastosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'editar-gastos/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/editar-gastos/editar-gastos.module').then(m => m.EditarGastosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'ver-gastos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/ver-gastos/ver-gastos.module').then(m => m.VerGastosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'ver-gastos-fecha',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/ver-gastos-fecha/ver-gastos-fecha.module').then(m => m.VerGastosFechaPageModule)
           }
         ]
       },
