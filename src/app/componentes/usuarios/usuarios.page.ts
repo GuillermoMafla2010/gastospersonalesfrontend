@@ -13,13 +13,15 @@ export class UsuariosPage implements OnInit {
   public ingresos: any;
   public gastos: any;
   public total: any;
-  constructor(private usuarioservice: UsuariosService, private statusBar: StatusBar) { }
-  
-  // let status bar overlay webview
+  constructor(private usuarioservice: UsuariosService, private statusBar: StatusBar) { 
+    // let status bar overlay webview
   this.statusBar.overlaysWebView(true);
 
   // set status bar to white
   this.statusBar.backgroundColorByHexString('#ffffff');
+  }
+
+  
   ngOnInit() {
    
     this.getUsuario();

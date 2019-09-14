@@ -52,6 +52,17 @@ const routes: Routes = [
       },
 
       {
+        path: 'deudas',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/deudas/deudas.module').then(m => m.DeudasPageModule)
+          }
+        ]
+      },
+
+      {
         path: 'crear-ingresos',
         children: [
           {
@@ -130,6 +141,16 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../componentes/gastos/ver-gastos-fecha/ver-gastos-fecha.module').then(m => m.VerGastosFechaPageModule)
+          }
+        ]
+      },
+      {
+        path: 'crear-deuda',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/deudas/crear-deuda/crear-deuda.module').then(m => m.CrearDeudaPageModule)
           }
         ]
       },

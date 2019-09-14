@@ -23,6 +23,8 @@ const routes: Routes = [
   { path: 'ahorros-vergastos', loadChildren: './componentes/ahorros/ahorros-vergastos/ahorros-vergastos.module#AhorrosVergastosPageModule' },
   { path: 'ahorros-crear', loadChildren: './componentes/ahorros/ahorros-crear/ahorros-crear.module#AhorrosCrearPageModule' },
   { path: 'ahorros-creargasto', loadChildren: './componentes/ahorros/ahorros-creargasto/ahorros-creargasto.module#AhorrosCreargastoPageModule' },
+  { path: 'deudas', loadChildren: './componentes/deudas/deudas.module#DeudasPageModule' },
+  { path: 'crear-deuda', loadChildren: './componentes/deudas/crear-deuda/crear-deuda.module#CrearDeudaPageModule' }
 ];
 @NgModule({
   imports: [
