@@ -61,7 +61,7 @@ export class DeudasPage implements OnInit {
       console.log(x)
     })*/
     this.deudaservice.getDeudasPorId(1).subscribe(x=>{
-      this.deuda=x.deudas
+      this.deuda=x
       console.log(x)
     })
 
