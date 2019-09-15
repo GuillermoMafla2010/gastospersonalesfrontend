@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>editar-gastos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="gasto">
+        <ion-card-title padding>Detalles</ion-card-title>
+        <ion-card-content>
+          <form (ngSubmit)="guardar()">
+            <ion-item>
+                <ion-label position="floating">Nombre Gasto</ion-label>
+                <ion-input type="text" [(ngModel)]="gasto.nombre_gasto" name="nombre_gasto" value={{gasto.nombre_gasto}} ></ion-input>
+              </ion-item>
+    
+              <ion-item>
+                  <ion-label position="floating">Monto</ion-label>
+                  <ion-input type="number" [(ngModel)]="gasto.cantidad_gasto" name="cantidad_gasto" value={{gasto.cantidad_gasto}} ></ion-input>
+                </ion-item>
+    
+                <ion-item>
+                    <ion-label position="floating">Categoria</ion-label>
+                    <ion-select [compareWith]="compararCategoria" name="categoria" [(ngModel)]="gasto.categorias">
+                      <ion-select-option  *ngFor="let item2 of categorias" [(value)]="item2">{{item2.nombre_categoria}}</ion-select-option>
+                      
+                    </ion-select>
+                  </ion-item>
+  
+                  <ion-item class="espaciado">
+                      <ion-label position="floating">Fecha</ion-label>
+                      <ion-datetime [(ngModel)]="gasto.fecha" value={{gasto.fecha}} name="fecha"></ion-datetime>
+                  </ion-item>
+                    
+  
+    
+                  
+                      <ion-button type="submit" class="margen">
+                          Guardar
+                        </ion-button>
+    
+                  
+                  
+                
+                
+    
+    
+    
+            </form>
+    
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

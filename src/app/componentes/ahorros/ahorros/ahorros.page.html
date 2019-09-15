@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="centrado">Ahorros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <!-- <ion-item style="margin-top:20px" *ngFor="let item of bancos">
+        <ion-label class="letra" (click)="veropciones(item.id)">
+          {{item.bancos.nombre_banco}} 
+        </ion-label>
+        <ion-badge color="success" slot="end"></ion-badge>
+      </ion-item> -->
+
+
+      <ion-item style="margin-top:20px" *ngFor="let item of bancos" >
+         
+              
+      <div *ngFor="let items of item.datos">
+        <ion-label (click)="veropciones(items.banco_id)">{{items.bancos.nombre_banco}}</ion-label>
+      </div>
+         
+        <ion-badge slot="end" color="success">
+          {{item.total | number:"1.0-2"}}
+        </ion-badge>
+       
+        
+        
+        <!-- <ion-label class="letra" *ngFor="let items of item.cuenta" (click)="veropciones(items.id)">{{items.bancos.nombre_banco}}</ion-label>
+        <ion-badge color="success" slot="end">$ {{item.total | number:"1.0-2"}}</ion-badge> -->
+      </ion-item>
+    
+      
+
+</ion-content>

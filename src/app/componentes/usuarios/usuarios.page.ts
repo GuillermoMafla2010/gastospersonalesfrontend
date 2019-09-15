@@ -1,3 +1,4 @@
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { UsuariosService } from './../../servicios/usuarios.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,14 @@ export class UsuariosPage implements OnInit {
   public ingresos: any;
   public gastos: any;
   public total: any;
-  constructor(private usuarioservice: UsuariosService) { }
+  constructor(private usuarioservice: UsuariosService,private statusBar: StatusBar) { 
+
+    // let status bar overlay webview
+this.statusBar.overlaysWebView(true);
+
+// set status bar to white
+this.statusBar.backgroundColorByHexString('#ffffff');
+  }
 
   ngOnInit() {
     this.getUsuario();
