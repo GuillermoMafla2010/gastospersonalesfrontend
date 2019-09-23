@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title *ngFor="let item of banco">{{item.bancos.nombre_banco}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor="let item of banco">
+  <ion-grid>
+    <ion-row style="margin-top:200px">
+      <ion-col size=12>
+          <ion-button expand="block" (click)="VerIngreso(item.banco_id)"> Ingresos</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col size=12>
+            <ion-button expand="block" (click)="VerGasto(item.banco_id)">Gastos</ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>
