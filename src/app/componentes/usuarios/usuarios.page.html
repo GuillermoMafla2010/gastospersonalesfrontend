@@ -1,37 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>usuarios</ion-title>
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+    <ion-title class="centrado">Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card class="margen">
+    <ion-card-content color="light">
+      <ion-card-title class="centrado">Detalles de Usuario</ion-card-title>
+      
+          <ion-list *ngIf="usuarios">
+              <ion-item>Nombre: {{usuarios.nombre}}</ion-item>
+              <ion-item>Email: {{usuarios.email}}</ion-item>
+              <ion-item>Celular: {{usuarios.celular}}</ion-item>
 
-  <ion-card>
-    <ion-card-header>Detalles del Usuario</ion-card-header>
-    <ion-card-content>
-      <ion-list *ngFor="let item of usuario">
-        <ion-item>
-            Nombre : {{item.nombre}}
-        </ion-item>
+            </ion-list>
+  
 
-        <ion-item>
-            Correo : {{item.email}}
-        </ion-item>
-
-        <ion-item>
-            Celular : {{item.celular}}
-        </ion-item>
-
-      </ion-list>
-    </ion-card-content>
+      
+            </ion-card-content>  
   </ion-card>
 
-  <ion-item>Detalles de Usuario</ion-item>
 
-  <ion-item>Ingresos : $ {{ingresos | number:"1.0-2"}}</ion-item>
+  <ion-list>
+      <ion-list-header>Registro Total</ion-list-header>
+      <ion-item>
+        <ion-label>Ingresos</ion-label>
+        <ion-badge color="success" slot="end"> $ {{sumaingresos | number:"1.0-2"}}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>Gastos</ion-label>
+        <ion-badge color="danger" slot="end">$ {{sumagastos | number:"1.0-2" }}</ion-badge>
+      </ion-item>
+      <ion-item>
+          <ion-label>Total</ion-label>
+          <ion-badge color="secondary" slot="end">$ {{sumaingresos-sumagastos | number:"1.0-2"}}</ion-badge>
+        </ion-item>
+    </ion-list>
 
-  <ion-item>Gastos : $ {{gastos | number:"1.0-2" }}</ion-item>
-
-  <ion-item>Total : $ {{total | number:"1.0-2"}}</ion-item>
+    <ion-icon name="create" slot="end"></ion-icon>
+  
 
 </ion-content>

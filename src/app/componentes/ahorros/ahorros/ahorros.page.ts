@@ -2,6 +2,9 @@ import { cingresos } from './../../../modelos/CIngresos';
 import { Router } from '@angular/router';
 import { AhorrosService } from './../../../servicios/ahorros.service';
 import { Component, OnInit } from '@angular/core';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+
 
 
 @Component({
@@ -16,8 +19,11 @@ export class AhorrosPage implements OnInit {
    ingresos=[]
    gastos=[]
    info=[]
-  constructor(private ahorroservice:AhorrosService,private router:Router) { }
-
+  constructor(private ahorroservice:AhorrosService,private router:Router,private statusBar: StatusBar
+    ) {
+      this.statusBar.backgroundColorByHexString('#fafaf7');
+      
+     }
   ngOnInit() {
     this.getAhorros()
    

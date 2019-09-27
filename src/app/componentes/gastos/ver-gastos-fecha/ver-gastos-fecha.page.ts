@@ -5,6 +5,8 @@ import { CategoriagastoService } from './../../../servicios/categoriagasto.servi
 
 import { GastosService } from './../../../servicios/gastos.service';
 import { Component, OnInit } from '@angular/core';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 @Component({
   selector: 'app-ver-gastos-fecha',
@@ -20,7 +22,9 @@ public suma:any
   constructor(private ingresoservice:GastosService,
   private categorias:CategoriagastoService,
   private datePipe:DatePipe,
-  public toastController: ToastController) { }
+  public toastController: ToastController,private statusBar: StatusBar) {
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+   }
 
   ngOnInit() {
     this.getcategorias();

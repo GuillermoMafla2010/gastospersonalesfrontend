@@ -4,6 +4,8 @@ import { IngresosService } from './../../../servicios/ingresos.service';
 import { CategoriaingresoService } from './../../../servicios/categoriaingreso.service';
 import { formatDate, DatePipe } from '@angular/common';
 import { ToastController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 
 @Component({
@@ -20,7 +22,10 @@ public suma:any
   constructor(private ingresoservice:IngresosService,
   private categorias:CategoriaingresoService,
   private datePipe:DatePipe,
-  public toastController: ToastController) { }
+  public toastController: ToastController,
+  private statusBar: StatusBar) { 
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+  }
 
   ngOnInit() {
     this.getcategorias();

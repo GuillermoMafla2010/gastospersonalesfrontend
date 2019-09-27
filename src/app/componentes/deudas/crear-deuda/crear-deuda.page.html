@@ -1,35 +1,37 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>ahorros-crear</ion-title>
+    <ion-title class="titulo">Nueva Deuda</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-card>
-       
+        <ion-card-title padding>Detalles</ion-card-title>
         <ion-card-content>
-            <ion-card-title padding>Detalles</ion-card-title>
           <form (ngSubmit)="guardar()">
             <ion-item>
                 <ion-label position="floating">Nombre Ingreso</ion-label>
-                <ion-input type="text" name="nombre_gasto" [(ngModel)]="ingresos.nombre_ingreso" ></ion-input>
+                <ion-input type="text" name="nombre_deuda" [(ngModel)]="deuda.nombre_deuda" ></ion-input>
               </ion-item>
     
               <ion-item>
                   <ion-label position="floating">Monto</ion-label>
-                  <ion-input type="number" name="cantidad_gasto" [(ngModel)]="ingresos.cantidad" ></ion-input>
+                  <ion-input type="number" name="cantidad" [(ngModel)]="deuda.cantidad" ></ion-input>
                 </ion-item>
     
                 
-  
+              <ion-item>
+                <ion-label position="floating">Cuotas</ion-label>
+                <ion-input type="number" name="cantidad" [(ngModel)]="deuda.cuota" ></ion-input>
+              </ion-item>
+
+
                   <ion-item class="espaciado">
                       <ion-label position="floating">Fecha</ion-label>
-                      <ion-datetime [(ngModel)]="ingresos.fecha" name="fecha" ></ion-datetime>
+                      <ion-datetime [(ngModel)]="deuda.fecha" name="fecha" ></ion-datetime>
                   </ion-item>
                     
   
-    
-                  
                       <ion-button type="submit" class="margen">
                           Guardar
                         </ion-button>

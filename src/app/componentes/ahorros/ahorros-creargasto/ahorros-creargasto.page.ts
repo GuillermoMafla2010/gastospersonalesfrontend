@@ -5,8 +5,10 @@ import { DatePipe } from '@angular/common';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-cgastos
+
+
 
 @Component({
   selector: 'app-ahorros-creargasto',
@@ -16,7 +18,10 @@ cgastos
 export class AhorrosCreargastoPage implements OnInit {
 
   gasto:cgastos=new cgastos
-  constructor(private router:Router,private ar:ActivatedRoute,private ahorroservice:AhorrosService,public toastController: ToastController,private datePipe:DatePipe) { }
+  constructor(private statusBar: StatusBar,private router:Router,private ar:ActivatedRoute,private ahorroservice:AhorrosService,public toastController: ToastController,private datePipe:DatePipe) {
+
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+     }
 
   ngOnInit() {
     this.ar.params.subscribe(x=>{

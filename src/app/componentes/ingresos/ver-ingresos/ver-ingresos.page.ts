@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import {Router} from '@angular/router';
 import swal from 'sweetalert2'
 import { AlertController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
   selector: 'app-ver-ingresos',
@@ -16,7 +17,10 @@ export class VerIngresosPage implements OnInit {
   public ingresos=[]
   
   public suma=0
-  constructor(private ingresoservice:IngresosService,public router:Router,public alertController: AlertController) { }
+  constructor(private ingresoservice:IngresosService,public router:Router,public alertController: AlertController,
+    private statusBar: StatusBar) {
+      this.statusBar.backgroundColorByHexString('#fafaf7');
+     }
 
   ngOnInit() {
     

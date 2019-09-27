@@ -2,6 +2,9 @@ import { AhorrosService } from './../../../servicios/ahorros.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+
 
 
 @Component({
@@ -12,7 +15,11 @@ import { AlertController } from '@ionic/angular';
 export class AhorrosVeringresosPage implements OnInit {
 
   public ingresos=[]
-  constructor(private ar:ActivatedRoute,private ahorroservice:AhorrosService,private router:Router,public alertController: AlertController) { }
+  constructor(private statusBar: StatusBar,private ar:ActivatedRoute,private ahorroservice:AhorrosService,private router:Router,public alertController: AlertController
+    ) {
+      this.statusBar.backgroundColorByHexString('#fafaf7');
+      
+     }
 
   ngOnInit() {
 

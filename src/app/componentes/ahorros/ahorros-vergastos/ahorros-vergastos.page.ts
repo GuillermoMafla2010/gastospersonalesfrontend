@@ -2,6 +2,9 @@ import { AhorrosService } from './../../../servicios/ahorros.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+
 
 @Component({
   selector: 'app-ahorros-vergastos',
@@ -11,7 +14,10 @@ import { AlertController } from '@ionic/angular';
 export class AhorrosVergastosPage implements OnInit {
 
   public gastos
-  constructor(private ar:ActivatedRoute,private ahorroservice:AhorrosService,public alertController: AlertController) { }
+  constructor(private statusBar: StatusBar,private ar:ActivatedRoute,private ahorroservice:AhorrosService,public alertController: AlertController) {
+
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+     }
 
   ngOnInit() {
     this.getGastos()

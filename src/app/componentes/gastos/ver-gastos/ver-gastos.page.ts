@@ -1,6 +1,8 @@
 import { Gastos } from './../../../modelos/Gastos';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GastosService } from './../../../servicios/gastos.service';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
@@ -20,7 +22,10 @@ export class VerGastosPage implements OnInit {
     private router:Router,
     private activatedroute:ActivatedRoute,
     public toastController: ToastController,
-    public alertController: AlertController) { }
+    public alertController: AlertController,
+    private statusBar: StatusBar) { 
+      this.statusBar.backgroundColorByHexString('#fafaf7');
+    }
 
   ngOnInit() {
     this.getGastos()

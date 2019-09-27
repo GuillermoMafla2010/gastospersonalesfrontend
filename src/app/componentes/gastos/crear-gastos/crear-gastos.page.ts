@@ -5,6 +5,8 @@ import { Gastos } from './../../../modelos/Gastos';
 import { GastosService } from './../../../servicios/gastos.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 import swal from 'sweetalert2'
 
@@ -21,7 +23,10 @@ export class CrearGastosPage implements OnInit {
               private categoria:CategoriagastoService,
               private router:Router,
               private datePipe:DatePipe,
-              public toastController: ToastController) { }
+              public toastController: ToastController,
+              private statusBar: StatusBar) { 
+                this.statusBar.backgroundColorByHexString('#fafaf7');
+              }
 
   ngOnInit() {
     this.getCategorias()

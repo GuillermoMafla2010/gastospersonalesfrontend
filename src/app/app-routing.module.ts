@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'ahorros-veringresos', loadChildren: './componentes/ahorros/ahorros-veringresos/ahorros-veringresos.module#AhorrosVeringresosPageModule' },
   { path: 'ahorros-vergastos', loadChildren: './componentes/ahorros/ahorros-vergastos/ahorros-vergastos.module#AhorrosVergastosPageModule' },
   { path: 'ahorros-crear', loadChildren: './componentes/ahorros/ahorros-crear/ahorros-crear.module#AhorrosCrearPageModule' },
-  { path: 'ahorros-creargasto', loadChildren: './componentes/ahorros/ahorros-creargasto/ahorros-creargasto.module#AhorrosCreargastoPageModule' },
+  { path: 'ahorros-creargasto', loadChildren: './componentes/ahorros/ahorros-creargasto/ahorros-creargasto.module#AhorrosCreargastoPageModule' },  { path: 'ver-cuota', loadChildren: './componentes/deudas/ver-cuota/ver-cuota.module#VerCuotaPageModule' },
+
 ];
 @NgModule({
   imports: [

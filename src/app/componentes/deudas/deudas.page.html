@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="centrado">Deudas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-item *ngIf="deuda?.length==0">
+      No existen deudas
+  </ion-item>
+<div *ngFor="let item of deuda ">
+
+    <ion-list *ngFor="let items of item.deudas"  >
+      
+        <ion-item (click)="ver_cuota(items.id)">
+          <ion-label class="letra" > {{items.nombre_deuda}} </ion-label>  
+          <ion-badge color="success" slot="end">$ {{item.suma | number:"1.0-2"}}</ion-badge>
+        </ion-item>
+      
+      </ion-list>
+    
+</div>
+  
+  <ion-fab-button color="primary" class="boton" (click)="creardeuda()"><ion-icon ios="ios-add" md="md-add"></ion-icon></ion-fab-button>
+
+</ion-content>

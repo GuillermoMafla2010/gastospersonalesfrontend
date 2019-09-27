@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 import {CategoriaingresoService} from 'src/app/servicios/categoriaingreso.service';
 import swal from 'sweetalert2'
 import { ToastController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 @Component({
   selector: 'app-crear-ingresos',
@@ -20,7 +22,10 @@ export class CrearIngresosPage implements OnInit {
     private ingresoservice:IngresosService,
     private router:Router,
     private datePipe:DatePipe,
-    public toastController: ToastController) { }
+    public toastController: ToastController,
+    private statusBar: StatusBar) { 
+      this.statusBar.backgroundColorByHexString('#fafaf7');
+    }
 
   ngOnInit() {
     this.getcategorias()

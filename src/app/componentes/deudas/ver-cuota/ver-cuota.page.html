@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>ver-cuota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let item of cuota">
+    <ion-item (click)="ver_cuota(item.id)">
+      <ion-label>{{item.nombre_cuota}}</ion-label>
+      <ion-badge slot="end">${{item.cantidad_cuota}}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

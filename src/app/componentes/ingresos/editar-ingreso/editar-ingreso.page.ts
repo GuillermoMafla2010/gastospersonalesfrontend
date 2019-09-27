@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IngresosService } from './../../../servicios/ingresos.service';
 import { Component, OnInit,Input } from '@angular/core';
 import {CategoriagastoService} from 'src/app/servicios/categoriagasto.service';
-
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 
 
@@ -23,7 +23,10 @@ export class EditarIngresoPage implements OnInit {
               private activatedroute:ActivatedRoute,
               private categoria:CategoriaingresoService,
               private datePipe:DatePipe,
-              private router:Router ) { }
+              private router:Router ,
+              private statusBar: StatusBar) { 
+                this.statusBar.backgroundColorByHexString('#fafaff7');
+              }
 
   ngOnInit() {
     this.activatedroute.params.subscribe(x=>{

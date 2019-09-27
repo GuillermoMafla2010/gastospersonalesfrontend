@@ -10,7 +10,7 @@ import { Deuda } from '../modelos/Deuda';
 export class DeudaService {
 
   private deuda:Deuda;
-  private url="http://localhost:8000/api/deudas"//"https://escuelajailuba.website/gastos/personal/api/deudas"//"http://localhost:8000/api/deudas"
+  private url="https://escuelajailuba.website/gastos/personal/api/deudas"//"http://localhost:8000/api/deudas"
   private url1="https://escuelajailuba.website/gastos/personal/api/verdeuda"//"http://localhost:8000/api/deudas"
   private  _notificarupload=new EventEmitter <any>();
   private  _deleteupload=new EventEmitter <any>();

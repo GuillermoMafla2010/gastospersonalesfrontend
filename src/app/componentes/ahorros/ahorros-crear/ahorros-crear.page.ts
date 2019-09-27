@@ -4,6 +4,9 @@ import { cingresos } from './../../../modelos/CIngresos';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ToastController } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+
 
 
 
@@ -16,7 +19,10 @@ import { ToastController } from '@ionic/angular';
 export class AhorrosCrearPage implements OnInit {
 
   public ingresos:cingresos=new cingresos;
-  constructor( private datePipe:DatePipe,private ar:ActivatedRoute,private ahorroservice:AhorrosService,private router:Router,public toastController: ToastController) { }
+  constructor( private statusBar: StatusBar,private datePipe:DatePipe,private ar:ActivatedRoute,private ahorroservice:AhorrosService,private router:Router,public toastController: ToastController) {
+
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+     }
 
   ngOnInit() {
     this.ar.params.subscribe(x=>{

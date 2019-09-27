@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 @Component({
   selector: 'app-ingresos',
@@ -8,7 +10,9 @@ import {Router} from '@angular/router';
 })
 export class IngresosPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private statusBar: StatusBar) {
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+   }
 
   ngOnInit() {
   }

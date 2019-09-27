@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 
 @Component({
@@ -9,7 +11,9 @@ import {Router} from '@angular/router';
 })
 export class GastosPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private statusBar: StatusBar) { 
+    this.statusBar.backgroundColorByHexString('#fafaf7');
+  }
 
   ngOnInit() {
   }
