@@ -102,7 +102,7 @@ export class DeudasPage implements OnInit {
            })
          }
 
-         if(a.suma>0){
+         if(a.suma > 0){
            console.log("Deuda por pagar")
          }
        })

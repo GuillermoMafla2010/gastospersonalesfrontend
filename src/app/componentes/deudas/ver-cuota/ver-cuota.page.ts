@@ -17,6 +17,10 @@ export class VerCuotaPage implements OnInit {
   constructor( private deudaservice:DeudaService ,private cuotaservice: CuotasService , private ar: ActivatedRoute , private router:Router) { }
 
   ngOnInit() {
+    this.getCuotas();
+  }
+
+  getCuotas() {
     this.ar.params.subscribe(x => {
       this.id = x.id;
       console.log(this.id);
@@ -27,19 +31,12 @@ export class VerCuotaPage implements OnInit {
     });
   }
 
-  getCuotas() {
-    this.cuotaservice.getCuotas(this.id).subscribe(y => {
-      console.log(y);
-      this.cuota = y;
-    });
-  }
-
 
  ver_cuota(cuotaid){
   this.cuotaservice.deleteCuota(cuotaid).subscribe(()=>{
-          //this.getCuotas()
+  this.getCuotas()
   this.deudaservice.deleteupload.emit(this.cuota);
-          this.ngOnInit()
+          
           
   })
  }
