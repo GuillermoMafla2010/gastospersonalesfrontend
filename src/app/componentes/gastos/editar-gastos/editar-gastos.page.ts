@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {CategoriaingresoService} from 'src/app/servicios/categoriaingreso.service';
 import { formatDate, DatePipe } from '@angular/common';
-import swal from 'sweetalert2'
+
 @Component({
   selector: 'app-editar-gastos',
   templateUrl: './editar-gastos.page.html',

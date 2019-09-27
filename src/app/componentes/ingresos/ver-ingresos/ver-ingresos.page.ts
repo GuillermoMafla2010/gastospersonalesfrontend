@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {EditarIngresoPage} from '../editar-ingreso/editar-ingreso.page';
 import { ModalController } from '@ionic/angular';
 import {Router} from '@angular/router';
-import swal from 'sweetalert2'
+
 import { AlertController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 

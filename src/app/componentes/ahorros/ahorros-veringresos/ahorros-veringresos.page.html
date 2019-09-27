@@ -9,13 +9,16 @@
 
   
   <ion-card >
+  <ion-card-content>
     <ion-item><p>Id :  </p>{{item.id}}
       
       <ion-icon name="trash" slot="end" (click)="delete(item.id)"></ion-icon></ion-item>
     <ion-item><p>Descripcion :  </p>{{item.nombre_ingreso}}</ion-item>
     <ion-item><p>Cantidad :  </p>{{item.cantidad}}</ion-item>
     <ion-item><p>Fecha :  </p>{{item.fecha}}</ion-item>
+  </ion-card-content>
   </ion-card>
+
   
 </div>
 

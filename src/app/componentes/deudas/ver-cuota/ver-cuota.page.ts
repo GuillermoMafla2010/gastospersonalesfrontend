@@ -38,7 +38,7 @@ export class VerCuotaPage implements OnInit {
  ver_cuota(cuotaid){
   this.cuotaservice.deleteCuota(cuotaid).subscribe(()=>{
           //this.getCuotas()
-  this.deudaservice.deleteupload.emit(this.cuota)
+  this.deudaservice.deleteupload.emit(this.cuota);
           this.ngOnInit()
           
   })

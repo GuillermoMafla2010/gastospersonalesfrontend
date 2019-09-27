@@ -8,7 +8,7 @@ import { ToastController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 
-import swal from 'sweetalert2'
+
 
 @Component({
   selector: 'app-crear-gastos',

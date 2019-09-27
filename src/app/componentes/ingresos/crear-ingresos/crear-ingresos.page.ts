@@ -4,7 +4,7 @@ import { IngresosService } from './../../../servicios/ingresos.service';
 import { Ingresos } from './../../../modelos/Ingresos';
 import { Component, OnInit } from '@angular/core';
 import {CategoriaingresoService} from 'src/app/servicios/categoriaingreso.service';
-import swal from 'sweetalert2'
+
 import { ToastController } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
